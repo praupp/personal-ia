@@ -1,4 +1,4 @@
-<img src="https://github.com/praupp/personal-ia/blob/main/imagens/Logo.jpeg" alt="Logo da Minha Empresa" width="80%">
+<img src="https://github.com/praupp/personal-ia/blob/main/imagens/Logo.jpeg" alt="Logo da Minha Empresa" width="30%">
 
 O Desafio maior, foi tentar fazer o sistema gerar em apenas uma pagina HTML que pode rodar em qualquer sistema , um sistema que 
 pudesse gerar planos de treinos, alimentação e hidratação personalizados dependendo das informações fornecidas.
