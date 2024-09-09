@@ -1,6 +1,4 @@
-
-imagens/Logo.jpeg
-
+<img src="https://github.com/praupp/personal-ia/blob/main/imagens/Logo.jpeg" alt="Logo da Minha Empresa">
 
 
 
