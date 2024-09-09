@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assistente de Personal Trainer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #800080, #0000FF, #008000);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        #logo {
+            width: 150px;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .options-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .options-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .radio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+        }
+        .image-option {
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #response-container {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+            .options-section {
+                flex-direction: column;
+            }
+            .options-column {
+                width: 100%;
+            }
+            .image-option {
+                width: 100%;
+                height: auto;
+                max-height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/home/raupp/Downloads/Personal-AI/imagens/Logo.jpeg" alt="Logomarca Assistente de Personal Trainer" id="logo">
+        <h1>Assistente de Personal Trainer</h1>
+        <form id="trainer-form">
+            <div>
+                <label for="gender">Gênero:</label>
+                <select id="gender" name="gender">
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                </select>
+            </div>
+            <div>
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" min="0" required>
+            </div>
+            <div>
+                <label for="weight">Peso corporal (kg):</label>
+                <input type="number" id="weight" name="weight" min="0" step="0.1" required>
+            </div>
+            <div>
+                <label for="training-days">Dias disponíveis para treino:</label>
+                <input type="number" id="training-days" name="training-days" min="1" max="7" required>
+            </div>
+
+            <div class="options-section">
+                <div class="options-column">
+                    <label>Biotipo corporal:</label>
+                    <div class="radio-group">
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/ectomorph.jpg" alt="Ectomorfo" class="image-option">
+                            <input type="radio" id="ectomorph" name="body-type" value="ectomorfo">
+                            <label for="ectomorph">Ectomorfo</label>
+                        </div>
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/mesomorph.jpg" alt="Mesomorfo" class="image-option">
+                            <input type="radio" id="mesomorph" name="body-type" value="mesomorfo">
+                            <label for="mesomorph">Mesomorfo</label>
+                        </div>
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/endmorph.jpg" alt="Endomorfo" class="image-option">
+                            <input type="radio" id="endomorph" name="body-type" value="endomorfo">
+                            <label for="endomorph">Endomorfo</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="options-column">
+                    <label>Tipo de exercício preferido:</label>
+                    <div class="radio-group">
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/funcional.png" alt="Funcional" class="image-option">
+                            <input type="radio" id="functional" name="exercise-type" value="funcional">
+                            <label for="functional">Funcional</label>
+                        </div>
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/maquinario.png" alt="Maquinário" class="image-option">
+                            <input type="radio" id="machines" name="exercise-type" value="maquinário">
+                            <label for="machines">Maquinário</label>
+                        </div>
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/Peso_Livre.png" alt="Peso Livre" class="image-option">
+                            <input type="radio" id="free-weights" name="exercise-type" value="peso livre">
+                            <label for="free-weights">Peso Livre</label>
+                        </div>
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/cardio.png" alt="Cardio" class="image-option">
+                            <input type="radio" id="cardio" name="exercise-type" value="cardio">
+                            <label for="cardio">Cardio</label>
+                        </div>
+                        <div class="radio-container">
+                            <img src="/home/raupp/Downloads/Personal-AI/imagens/hiit.png" alt="HIIT" class="image-option">
+                            <input type="radio" id="hiit" name="exercise-type" value="hiit">
+                            <label for="hiit">HIIT</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+
+        <div id="response-container"></div>
+    </div>
+
+    <script>
+        document.getElementById('trainer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const gender = document.getElementById('gender').value;
+            const age = document.getElementById('age').value;
+            const weight = document.getElementById('weight').value;
+            const trainingDays = document.getElementById('training-days').value;
+            const bodyType = document.querySelector('input[name="body-type"]:checked')?.value || '';
+            const exerciseType = document.querySelector('input[name="exercise-type"]:checked')?.value || '';
+
+            const prompt = `Crie um plano de treino para uma pessoa com as seguintes características:
+            - Gênero: ${gender}
+            - Idade: ${age} anos
+            - Peso: ${weight} kg
+            - Dias disponíveis para treino: ${trainingDays}
+            - Biotipo corporal: ${bodyType}
+            - Tipo de exercício preferido: ${exerciseType}
+
+            Forneça um plano de treino detalhado, incluindo tipos de exercícios, plano de cardápio 
+            detalhado para todos os dias da semana descrevendo cardapios diferenciados para todos 
+            os dias da semana, Segunda, Terça, Quarta, Quinta, Sexta, Sábado e Domingo 
+            Gerar uma Observação referente a importancia de se manter hidratado sugerindo os melhores 
+            tipos de liquidos hidratáveis da época, levando em consideração as informações acima`;
+            document.getElementById('response-container').innerHTML = `<p>Prompt gerado:</p><pre>${prompt}</pre>`;
+            // Copiar o prompt para a área de transferência
+            navigator.clipboard.writeText(prompt);
+            alert('O prompt foi copiado para a área de transferência!');
+        });
+    </script>
+</body>
+</html>
