@@ -1,3 +1,12 @@
+
+imagens/Logo.jpeg
+
+
+
+
+
+
+
 O Desafio maior, foi tentar fazer o sistema gerar em apenas uma pagina HTML que pode rodar em qualquer sistema , um sistema que 
 pudesse gerar planos de treinos, alimentação e hidratação personalizados dependendo das informações fornecidas.
 
